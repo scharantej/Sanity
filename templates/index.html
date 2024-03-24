@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mental Health Resources</title>
+</head>
+<body>
+<h1>Welcome to the Mental Health Resources Web App</h1>
+<p>This app provides a list of mental health resources, including hotlines, support websites, and therapy centers. You can also share your thoughts and experiences anonymously.</p>
+<h2>Resources</h2>
+<ul>
+{% for resource in resources %}
+<li>{{ resource.name }} - {{ resource.phone }}</li>
+{% endfor %}
+</ul>
+<h2>Share Your Thoughts</h2>
+<form action="/anonymous" method="post">
+<label for="thought">What's on your mind?</label>
+<textarea name="thought" id="thought" rows="4" cols="50"></textarea>
+<input type="submit" value="Share">
+</form>
+</body>
+</html>
+
+
